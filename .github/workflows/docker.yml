@@ -3,8 +3,14 @@ on: push
 
 jobs:
   build:
+    name: build
     runs-on: ubuntu-latest
+    container:
+        image: node:slim
+    
     steps:
     - name: Build the site in the jekyll/builder container
-      run: echo "hello from github action"
+      run: |
+        npm -v
+        node -v
 
